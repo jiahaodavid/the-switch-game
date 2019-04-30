@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import RoomListPage from './RoomListPage';
 import './RoomPage.css';
-import GamePage from './GamePage';
+import Game from './phaser/Game';
 
 class RoomPage extends React.Component {
     constructor() {
