@@ -2,21 +2,11 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-.room {
+.running {
     background-color: #282c34;
+    overflow : hidden;
     height: 10vh;
-    
 }
-
-.room-header {
-    color: white;
-    position: relative;
-    text-align: center;
-    top: 1em;
-}
-
-
-
 
 .room-back-button {
     position: relative;
