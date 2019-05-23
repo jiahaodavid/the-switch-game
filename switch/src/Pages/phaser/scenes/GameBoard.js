@@ -57,9 +57,9 @@ export class GameBoard extends Phaser.Scene {
 		//display card
 		this.decideCard()
 			 		
-		this.userName=['switch','test3','test5','noviah']
+		this.userName=['Loading','Loading','Loading','Loading']
 		this.initiRoomInfo()
-		this.getuserName()
+		
 
 
 		//test 4 player mode
@@ -175,12 +175,12 @@ console.log('inital info'+cardSet)
 
 	const userName = getPlayersInTheRoom.data.getRoompage.players;
 	console.log('initial info'+userName)
-	const thething = {
-		username : name,
-		userList:userName,
-		cardGet: cardSet
-			};
-const newThing = await API.graphql(graphqlOperation(mutations.updateQw, {input: thething}));
+// 	const thething = {
+// 		username : name,
+// 		userList:userName,
+// 		cardGet: cardSet
+// 			};
+// const newThing = await API.graphql(graphqlOperation(mutations.updateQw, {input: thething}));
 
 
 	})();
@@ -363,18 +363,18 @@ async updateScreen(){
  
 		await client.hydrated();
 
-		// const getUser = await Auth.currentAuthenticatedUser();
-		// const name = getUser.username;
-		// const getRoomID = await API.graphql(graphqlOperation(queries.getQw,{
-		// 		username : name
-		// }));
-		// const result = getRoomID.data.getQw.roomID;
-		// const getPlayersInTheRoom = await API.graphql(graphqlOperation(queries.getRoompage,{
-		// 		roomid : result
-		// }))
-		// const userName = getPlayersInTheRoom.data.getRoompage.players;
+		const getUser = await Auth.currentAuthenticatedUser();
+		const name = getUser.username;
+		const getRoomID = await API.graphql(graphqlOperation(queries.getQw,{
+				username : name
+		}));
+		const result = getRoomID.data.getQw.roomID;
+		const getPlayersInTheRoom = await API.graphql(graphqlOperation(queries.getRoompage,{
+				roomid : result
+		}))
+		const userName = getPlayersInTheRoom.data.getRoompage.players;
 						
-		var nameWeGot1 = this.userName[0];
+		var nameWeGot1 = userName[0];
 		const result1 = await client.query({
 			query: gql(queries.getQw),
 			variables: {
@@ -383,7 +383,7 @@ async updateScreen(){
 			fetchPolicy: 'network-only',
 		});
 
-		var nameWeGot2 = this.userName[1];
+		var nameWeGot2 = userName[1];
 			 const result2 = await client.query({
 			query: gql(queries.getQw),
 			variables: {
@@ -392,7 +392,7 @@ async updateScreen(){
 			fetchPolicy: 'network-only',
 		});
 
-		var nameWeGot3 = this.userName[2];
+		var nameWeGot3 = userName[2];
 			 const result3 = await client.query({
 			query: gql(queries.getQw),
 			variables: {
@@ -401,7 +401,7 @@ async updateScreen(){
 			fetchPolicy: 'network-only',
 		});
 
-		var nameWeGot4 = this.userName[3];
+		var nameWeGot4 = userName[3];
 			 const result4 = await client.query({
 			query: gql(queries.getQw),
 			variables: {
@@ -426,7 +426,7 @@ async updateScreen(){
 		this.player[3].setX(x4)
 		this.player[3].setY(y4)
 
-		this.playername.text=this.userName[result1.data.getQw.seat%4]+' turn'
+		this.playername.text=userName[result1.data.getQw.seat%4]+' turn'
 
 		let arrange=result1.data.getQw.seat
 		let cardleft=result1.data.getQw.cardLeft
