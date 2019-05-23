@@ -1,12 +1,43 @@
-![](https://github.com/jariclnnf/the-switch-game/blob/master/img/fccd59114cefce930cd45f094201a50a.png)
-![](https://github.com/jariclnnf/the-switch-game/blob/master/img/WechatIMG123.png)
+![](https://github.com/jariclnnf/the-switch-game/blob/master/d8aa48f2296d3ffff7d3f63582d972c5.png)
 
 
+## Team Members: 
+__Yinuo Huang__ _(product manager)_
+
+__Xin Zhao__ _(scrum master)_
+
+__Yueming Tang__ _(developer)_
+
+__David Huang__ _(developer)_
+
+__JinFeng Lin__ _(developer)_
+</br>
+</br>
+
+
+## Website
 http://switch-20190429040250-hostingbucket-switch.s3-website.us-east-2.amazonaws.com/
 
-Switch game rules
+## Documentation
 
-4-person rule
+___
+
+## Tools Used:
+1. _Phaser_
+2. _AWS cognito_
+3. _AWS appsync_
+
+## Installation needs
+1.  ```npm install```
+
+
+## Testing:
+1. ```npm jest``` 
+2. ```npm install --save react-testing-library jest-dom```
+3. ```npm i puppeteer```
+
+___
+## Game rules
 
 Ready to work
 52 cards (no size king) & 4 different pieces
@@ -153,13 +184,3 @@ When the two scored 20 points or more after the end of the same game, the highes
 If it is even, then play another game.
 
 Note: After playing another game, it is possible that another player gets a high score and gets the highest score in the game.
-
-2-person rule
-
-25 cards in 5*5
-
-Two players face each other, and the pieces are placed on the leftmost card in the first row in front of them.
-
-10 points for each player with the highest card number
-
-40 points for the winner of this game
